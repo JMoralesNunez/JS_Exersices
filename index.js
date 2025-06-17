@@ -160,4 +160,56 @@ let time = "mañana"
 let weather = "soleado"
 let umbrella = true
 
+if (weather == "lluvioso" && !umbrella){
+    console.log("Espera o toma el bus");
+} else if (time == "noche"){
+    console.log("Por seguridad, toma el bus");
+} else if (weather=="soleado" && umbrella){
+    console.log("Puedes ir caminando");
+} else{
+    console.log("Toma la mejor decisión según tu opinión");
+}
+
+// 13
+
+let user="admin1"
+let password="1234abc"
+let attempts=0
+let admin=true
+
+while (attempts<3) {
+    userInput = prompt("Ingresa tu nombre de usuario")
+    userPassword = prompt("ingresa tu contraseña")
+    if (userInput==user && userPassword==password) {
+    console.log("Acceso permitido!");
+    break
+    } else if (admin && attempts<=1) {
+            console.log("Acceso concedido como administrador");
+            break
+    } else {
+        console.log("Usuario o contraseña incorrectos");
+    }
+}
+
+// 14
+
+counter=0
+userCount=0
+
+while (counter<5){
+    user=prompt("Ingresa un nombre de usuario")
+    if (user.length > 3) {
+        userCount+=1
+        counter++
+    } else {
+        console.error("Nombre de usuario inválido");
+        counter++
+    }
+}
+
+validUsers = `El número de usuarios válidos es de: ${userCount}`
+
+
+// 15
+
 
