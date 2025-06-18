@@ -212,4 +212,119 @@ validUsers = `El número de usuarios válidos es de: ${userCount}`
 
 // 15
 
+let contrasenas = ["abc123", "segura2024", "pass", "hola1234"];
+
+for (let i = 0; i < contrasenas.length; i++) {
+    let tieneNumero = /\d/.test(contrasenas[i]);
+    if (contrasenas[i].length >= 8 && tieneNumero) {
+        console.log("Contraseña válida: " + contrasenas[i]);
+        break;
+    } else {
+    console.log("Debe cambiar la contraseña: " + contrasenas[i]);
+    }
+}
+
+// 16
+
+let calificacion = 0;
+
+while (calificacion !== 5) {
+    calificacion = parseInt(prompt("Califica el servicio (1 a 5):"));
+    if (calificacion !== 5) {
+    console.log("Gracias, seguimos mejorando.");
+    }
+}
+
+console.log("¡Gracias por calificarnos con 5!");
+
+
+// 17
+let usuario = "usuario";
+let contrasena = "1234";
+let intentos = 3;
+
+for (let i = 1; i <= intentos; i++) {
+    let inputUsuario = prompt("Usuario:");
+    let inputContrasena = prompt("Contraseña:");
+
+    if (inputUsuario === usuario && inputContrasena === contrasena) {
+        console.log("Bienvenido");
+        break;
+    } else {
+        let restantes = intentos - i;
+        if (restantes > 0) {
+            console.log("Datos incorrectos. Intentos restantes: " + restantes);
+        } else {
+            console.log("Cuenta bloqueada");
+        }
+    }
+}
+
+// 18 
+
+let opcion = "";
+
+while (opcion !== "salir") {
+    opcion = prompt("Elige una opción:\n1. Ver perfil\n2. Editar perfil\n3. Cerrar sesión\n4. Salir").toLowerCase();
+
+    if (opcion === "1" || opcion === "ver perfil") {
+        console.log("Mostrando perfil...");
+    } else if (opcion === "2" || opcion === "editar perfil") {
+        console.log("Editando perfil...");
+    } else if (opcion === "3" || opcion === "cerrar sesión") {
+        console.log("Sesión cerrada");
+    } else if (opcion === "4" || opcion === "salir") {
+        console.log("Saliendo del menú...");
+    } else {
+        console.log("Opción no válida");
+    }
+}
+
+// 19
+
+let total = 0;
+let option;
+
+while (true) {
+    opcion = prompt("¿Qué deseas hacer?\n1. Agregar producto\n2. Finalizar compra");
+
+    if (opcion === "1") {
+        let precio = parseFloat(prompt("Ingresa el precio del producto:"));
+        total += precio;
+        console.log("Producto agregado. Total hasta ahora: $" + total);
+    } else if (opcion === "2") {
+        console.log("Compra finalizada. Total a pagar: $" + total);
+        break;
+    } else {
+        console.log("Opción no válida");
+    }
+}
+
+// 20
+
+let notas = [4.5, 2.8, 3.2, 1.9, 4.0];
+let suma = 0;
+let enRiesgo = 0;
+let mayor = notas[0];
+let menor = notas[0];
+
+for (let i = 0; i < notas.length; i++) {
+    let nota = notas[i];
+    suma += nota;
+
+    if (nota < 3) {
+        console.log("Estudiante " + (i + 1) + " está en riesgo");
+        enRiesgo++;
+    }
+
+    if (nota > mayor) mayor = nota;
+    if (nota < menor) menor = nota;
+}
+
+let promedio = suma / notas.length;
+
+console.log("Promedio general: " + promedio.toFixed(2));
+console.log("Estudiantes en riesgo: " + enRiesgo);
+console.log("Mayor nota: " + mayor);
+console.log("Menor nota: " + menor);
 
