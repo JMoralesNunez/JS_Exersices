@@ -1,8 +1,8 @@
 // Estado Inicial:
 
-vida=5
-miembros=3
-mochila=[]
+let vida=5
+let miembros=3
+const mochila=[]
 
 function estado() {
     console.info(`Tu vida actual es: ${vida}`);
