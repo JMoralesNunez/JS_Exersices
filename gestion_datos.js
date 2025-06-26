@@ -9,18 +9,49 @@ const products = {
     6 : {id:2, name: "pantalon", price: "50"}
 };
 
+console.log("Keys del objeto products:", Object.keys(products));
+console.log("Values del objeto products:", Object.values(products));
+console.log("Entries del objeto products:", Object.entries(products));
+
 // Conversión a set
 
-const productsNameSet = new Set(Object.values(products).map(product => product.name));
+const productsName =Object.values(products).map(product => product.name);
+const productsSet = new Set(productsName)
 
-console.log(productsNameSet);
+console.log(productsSet);
 
 // Creación de map
 
 const productsMap = new Map([
     ["vestimenta", "camisa"],
-    ["vestimenta", "pantalón"],
     ["zapatos", "tenis"],
-    ["accesorios", "collar"],
-    ["vestimenta", "sudadera"]
+    ["accesorios", "collar"]
 ]);
+
+console.log(productsMap);
+
+// Recorrer con For ... in
+
+for (const key in products) {
+    console.log(`ID: ${products[key].id}, Nombre: ${products[key].name}, Precio: ${products[key].price}`);
+}
+
+// Recorrer set con for... of
+
+for (const product of productsSet) {
+    console.log(product);
+}
+
+//Recorrer map con forEach()
+
+productsMap.forEach((value, key) => {
+    console.log(`Categoria: ${key}, Producto: ${value}`);
+});
+
+
+//validación set
+
+console.log(`Tamaño del Set (productos únicos): ${productsSet.size}`);
+productsSet.forEach(product => {
+    console.log(product);
+});
